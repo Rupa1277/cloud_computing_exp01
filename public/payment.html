@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEasy - Checkout</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Razorpay Checkout script -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="brand">ShopEasy</a>
+    <div class="nav-links">
+      <a href="index.html">Products</a>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Checkout</h1>
+
+    <div id="checkout-section">
+      <div id="order-summary" class="order-summary"></div>
+
+      <form id="payment-form" class="payment-form">
+        <label>
+          Full Name
+          <input type="text" id="name" placeholder="Your name" />
+        </label>
+        <label>
+          Email
+          <input type="email" id="email" placeholder="you@example.com" />
+        </label>
+
+        <p id="form-error" class="error"></p>
+
+        <button type="submit" id="pay-btn" class="pay-btn">Pay</button>
+      </form>
+
+      <p class="test-note">
+        This uses Razorpay <strong>Test Mode</strong>. Use test card <code>4111 1111 1111 1111</code>,
+        any future expiry date, any CVV, and any OTP to simulate a successful payment.
+      </p>
+    </div>
+
+    <div id="payment-result" class="payment-result" style="display:none;"></div>
+  </div>
+
+  <div class="footer">
+    Cloud Computing Mini Project &mdash; Node/Express + SQLite + Razorpay (Test Mode)
+  </div>
+
+  <script src="js/cart-store.js"></script>
+  <script src="js/payment.js"></script>
+</body>
+</html>
